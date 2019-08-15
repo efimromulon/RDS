@@ -1,5 +1,7 @@
 <template>
+		
 		<div id="app">
+
 			<router-view/>
 			<div class="nav" v-show="menuactive">
 				<div class="navoverlay"></div>
@@ -151,7 +153,7 @@
 	}
 </script>
 
-<style lang="sass">
+<style scoped lang="sass">
 @font-face
 	font-family: 'Kosugi-Regular'
 	src: url('~@/fonts/Kosugi-Regular.ttf')
@@ -181,9 +183,11 @@
 		background-color: #131313 
 		opacity: .9 
 	ul
+		width: 100vw
 		position: absolute 
 		top: 50%
 		transform: translateY(-50%)
+		padding: 0 !important
 	li 
 		text-decoration: none !important
 		font-family: 'LexendDeca-Regular' !important
