@@ -171,7 +171,7 @@
 	height: 100vh
 	padding: 0
 	margin: 0
-	position: absolute
+	position: fixed
 	top: 0
 	left: 0 
 .nav
@@ -255,5 +255,9 @@ a:-webkit-any-link
 	left: 0
 	height: 100vh
 	width: 100vw
-	background-color: #131313 
+	background-color: #131313
+@supports ((position:sticky) or (position:-webkit-sticky))
+	.nav, .nav_fix
+		position: -webkit-sticky
+		position: sticky
 </style>
