@@ -3,9 +3,9 @@
 		<div class="centralholder">
 
 			<div class="text-center">
-				<span>C</span>
+				<!-- <span>C</span>
 				<span>A</span>
-				<span>R</span>
+				<span>R</span> -->
 			</div>
 			<!-- 
 			<div class="logoleft">
@@ -80,6 +80,8 @@
 				tl.to(ruleafter, 1.3, {cssRule:{width:"100%", ease: Sine.easeOut}})
 				.to(rulebefore, 1.3, {cssRule:{left: '100%', ease: Sine.easeOut}})
 				.to(ruleafter, .65, {cssRule:{left: '100%', ease: Sine.easeOut}}, '-=.65')
+				.to("#app-preloader", .65, {opacity: 0})
+				.to("#app-preloader", .65, {display: 'none'})
 				//.to(".loaderline", 1.3, {width: 0, transformOrigin: 'left 100%'})
 
 				//then later, control the whole thing...
@@ -101,8 +103,10 @@
 		width: 100vw
 		height: 100vh
 		position: absolute
-		z-index: 999
-		background-color: #131313  
+		z-index: 9999999
+		background-image: url(../assets/preloadbg.jpg) 
+		background-position: right 67% bottom 45%
+		background-size: cover 
 		top: 0
 		left: 0
 	.centralholder
@@ -110,7 +114,7 @@
 		top: 50%
 		left: 50%
 		transform: translate3d(-50%, -50%, 0)
-		width: 50px
+		width: 130px
 		
 	.logoleft, .text-center, .logoright
 		//position: absolute
@@ -131,8 +135,14 @@
 			fill: none
 	.text-center
 		font-size: 43px
+		width: 130px
+		height: 130px
 		color: white 
 		font-family: 'PermanentMarker-Regular'
+		background-image: url(../assets/Bez_imeni-1-vosstanovleno.png) 
+		background-position: right 67% bottom 45%
+		background-size: cover
+		
 		span
 			display: block
 	.logoright

@@ -4,23 +4,7 @@
 		<ul>
 			<li>
 				<div class="imgsoc"></div>
-				<div class="textsoc">Сообщество 1</div>
-			</li>
-			<li>
-				<div class="imgsoc"></div>
-				<div class="textsoc">Сообщество 2</div>
-			</li>
-			<li>
-				<div class="imgsoc"></div>
-				<div class="textsoc">Сообщество 3</div>
-			</li>
-			<li>
-				<div class="imgsoc"></div>
-				<div class="textsoc">Сообщество 4</div>
-			</li>
-			<li>
-				<div class="imgsoc"></div>
-				<div class="textsoc">Сообщество 5</div>
+				<div class="textsoc">JDM 62</div>
 			</li>
 		</ul>
 	</div>

@@ -31,10 +31,11 @@
 					ref="uiBurgerLine3"
 				></div>
 			</button>
-
+			<preloader></preloader>
 		</div>
 </template>
 <script>
+	import Preloader from '@/views/Preloader.vue'
 	import {mapActions} from 'vuex'
 	import {TweenLite, TimelineMax} from 'gsap'
 	export default {
@@ -46,6 +47,9 @@
 		// 		required: true
 		// 	}
 		// },
+		components: {
+			Preloader
+		},
 		data () {
 			return {
 				burgerTL: null,
@@ -175,6 +179,7 @@
 	top: 0
 	width: 100vw
 	height: 100vh
+	z-index: 99998
 	.navoverlay
 		position: absolute
 		top: 0
@@ -210,7 +215,7 @@ a:-webkit-any-link
 	transition: all .3s !important
 #ui-burger-main
 	position: absolute
-	z-index: 11
+	z-index: 999999
 	cursor: pointer
 	padding: 1px 6px
 	align-items: flex-start
