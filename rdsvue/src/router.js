@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Preloader from './views/Preloader.vue'
+import Profile from './views/Profile.vue'
+import Club from './views/Club.vue'
+import Soc from './views/Soc.vue'
+import Events from './views/Events.vue'
 
 Vue.use(Router)
 
@@ -11,13 +15,23 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'preloader',
-      component: Preloader
+      name: 'profile',
+      component: Profile
     },
     {
-      path: '/home',
-      name: 'home',
-      component: Home
+      path: '/club',
+      name: 'club',
+      component: Club
+    },
+    {
+      path: '/soc',
+      name: 'soc',
+      component: Soc
+    },
+    {
+      path: '/events',
+      name: 'events',
+      component: Events
     },
     {
       path: '/map',

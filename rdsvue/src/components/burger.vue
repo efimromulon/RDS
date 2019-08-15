@@ -1,43 +1,29 @@
 <template>
-		<div id="app">
-			<router-view/>
-			<div class="nav" v-show="menuactive">
-				<div class="navoverlay"></div>
-				<ul>
-					<li @click="menuactive = !menuactive"><router-link to="/">ПРОФИЛЬ</router-link></li>
-					<li @click="menuactive = !menuactive"><router-link to="/soc">СООБЩЕСТВА</router-link></li>
-					<li @click="menuactive = !menuactive"><router-link to="/club">КЛУБ</router-link></li>
-					<li @click="menuactive = !menuactive"><router-link to="/events">СОБЫТИЯ</router-link></li>
-					<li @click="menuactive = !menuactive"><router-link to="/map">КАРТА</router-link></li>
-				</ul>
-			</div>
-
-			<button id="ui-burger-main" @click="burgerClick" @blur="burgerBlur">
-				<div 
-					id="ui-burger-line-1" 
-					class="ui-burger-line" 
-					ref="uiBurgerLine1"
-				></div>
-				<div 
-					id="ui-burger-line-2" 
-					class="ui-burger-line" 
-					ref="uiBurgerLine2"
-				></div>
-				<div 
-					id="ui-burger-line-3" 
-					class="ui-burger-line" 
-					ref="uiBurgerLine3"
-				></div>
-			</button>
-
-		</div>
+	<button id="ui-burger-main" @click="burgerClick" @blur="burgerBlur">
+		<div 
+			id="ui-burger-line-1" 
+			class="ui-burger-line" 
+			ref="uiBurgerLine1"
+		></div>
+		<div 
+			id="ui-burger-line-2" 
+			class="ui-burger-line" 
+			ref="uiBurgerLine2"
+		></div>
+		<div 
+			id="ui-burger-line-3" 
+			class="ui-burger-line" 
+			ref="uiBurgerLine3"
+		></div>
+	</button>
 </template>
+
 <script>
 	import {mapActions} from 'vuex'
 	import {TweenLite, TimelineMax} from 'gsap'
 	export default {
 
-		name: 'app',
+		name: 'burger',
 		// props: {
 		// 	componentControl: {
 		// 		type: String,
@@ -54,8 +40,7 @@
 				cssTopCtr: 21,
 				burgerTLstep: 0.3,
 				cssOpasity2: 0,
-				burgerBGCtime: 0,
-				menuactive: false
+				burgerBGCtime: 0
 			}
 		},
 
@@ -135,7 +120,6 @@
 				;
 			},
 			burgerClick($event){
-				this.menuactive = !this.menuactive;
 				this.burgerBGCtime = this.burgerTLstep;
 				this.burgerTLpaused = false;
 				this.burgerTL.play();
@@ -152,58 +136,6 @@
 </script>
 
 <style lang="sass">
-@font-face
-	font-family: 'Kosugi-Regular'
-	src: url('~@/fonts/Kosugi-Regular.ttf')
-#app
-	font-family: 'Avenir', Helvetica, Arial, sans-serif
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
-	text-align: center
-	color: #2c3e50
-	width: 100vw
-	height: 100vh
-	padding: 0
-	margin: 0
-	position: absolute
-	top: 0
-	left: 0 
-.nav
-	position: fixed
-	top: 0
-	width: 100vw
-	height: 100vh
-	.navoverlay
-		position: absolute
-		top: 0
-		width: 100vw
-		height: 100vh
-		background-color: #131313 
-		opacity: .9 
-	ul
-		position: absolute 
-		top: 50%
-		transform: translateY(-50%)
-	li 
-		text-decoration: none !important
-		font-family: 'LexendDeca-Regular' !important
-		color: transparent !important
-		font-size: 35px !important
-		-webkit-text-stroke: 1px #fff !important
-		transition: all .3s !important
-		&:hover
-			color: #fff
-			-webkit-text-stroke: 0px #fff
-a:-webkit-any-link 
-	color: white !important
-	cursor: pointer
-	text-decoration: none !important
-	text-decoration: none !important
-	font-family: 'Kosugi-Regular' !important
-	color: transparent !important
-	font-size: 35px !important
-	-webkit-text-stroke: 1px #fff !important
-	transition: all .3s !important
 #ui-burger-main
 	position: absolute
 	z-index: 11
@@ -240,11 +172,4 @@ a:-webkit-any-link
 	top: 21px
 #ui-burger-line-3
 	bottom: 10px
-#nav
-	position: fixed
-	top: 0
-	left: 0
-	height: 100vh
-	width: 100vw
-	background-color: #131313 
 </style>
